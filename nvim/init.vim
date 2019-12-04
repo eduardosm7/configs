@@ -1,4 +1,4 @@
-" ===========================
+"v ===========================
 " => External Dependencies <=
 " ===========================
 " Python's Neovim Lib
@@ -82,6 +82,10 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
+
+" nerdtree
+"   show hidden files
+let g:NERDTreeShowHidden=1
 " ===========================
 
 " ===========
@@ -141,6 +145,10 @@ nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 "   install plugins [LEARDER iv]
 nnoremap <leader>iv :PlugInstall<cr>
+
+" NERDTree
+"   toggle nerdtree
+nnoremap <leader>b :NERDTreeToggle<cr>
 " =====================
 
 " ======================
@@ -154,4 +162,5 @@ cnoremap W w
 nnoremap <c-p> :Files<cr>
 "   on file contents [CTRL-F] -> the_silver_searcher must be installed
 nnoremap <c-f> :Ag<cr>
+
 " ======================
