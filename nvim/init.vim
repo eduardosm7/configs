@@ -32,6 +32,7 @@ Plug 'tpope/vim-fugitive'              " Git wrapper
 Plug 'scrooloose/nerdtree'             " File manager
 Plug 'machakann/vim-highlightedyank'   " Highlight yank command
 Plug 'andymass/vim-matchup'            " Match blocks
+Plug 'tpope/vim-commentary'            " Handle commentaries
 
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }  " Install fzf
@@ -165,5 +166,4 @@ cnoremap W w
 nnoremap <c-p> :Files<cr>
 "   on file contents [CTRL-F] -> the_silver_searcher must be installed
 nnoremap <c-f> :Ag<cr>
-
 " ======================
