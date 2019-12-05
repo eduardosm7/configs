@@ -18,28 +18,30 @@
 " After loading this config file, :PlugInstall<cr> to install the plugins
 "
 call plug#begin()
-Plug 'morhetz/gruvbox'  " Gruvbox theme
-Plug 'terryma/vim-multiple-cursors'  " Press CTRL-N to select multiple cursors
-Plug 'sheerun/vim-polyglot'  " Better syntax highlight
-Plug 'tpope/vim-surround'  " Deal with surroundings
-Plug 'tommcdo/vim-exchange'  " Text exchange
-Plug 'dylanaraps/root.vim'  " Changes current directory to repository root
-Plug 'w0rp/ale'  " Linter
-Plug 'jiangmiao/auto-pairs'  " Automatically adds a pair to chars like { ( [
-Plug 'vim-airline/vim-airline'  " Better bar on bottom
-Plug 'vim-airline/vim-airline-themes'  " vim-airline-themes
-Plug 'tpope/vim-fugitive'  " Git wrapper
-Plug 'scrooloose/nerdtree'  " File manager
+Plug 'morhetz/gruvbox'                 " Gruvbox theme
+Plug 'terryma/vim-multiple-cursors'    " Press CTRL-N to select multiple cursors
+Plug 'sheerun/vim-polyglot'            " Better syntax highlight
+Plug 'tpope/vim-surround'              " Deal with surroundings
+Plug 'tommcdo/vim-exchange'            " Text exchange
+Plug 'dylanaraps/root.vim'             " Changes current directory to repository root
+Plug 'w0rp/ale'                        " Linter
+Plug 'jiangmiao/auto-pairs'            " Automatically adds a pair to chars like { ( [
+Plug 'vim-airline/vim-airline'         " Better bar on bottom
+Plug 'vim-airline/vim-airline-themes'  " Themes for vim-airline
+Plug 'tpope/vim-fugitive'              " Git wrapper
+Plug 'scrooloose/nerdtree'             " File manager
+Plug 'machakann/vim-highlightedyank'   " Highlight yank command
+Plug 'andymass/vim-matchup'            " Match blocks
 
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }  " Install fzf
-Plug 'junegunn/fzf.vim'  " Install fzf vim plugin
+Plug 'junegunn/fzf.vim'                                            " Install fzf vim plugin
 
 " Autocomplete
-Plug 'ncm2/ncm2'  " Autocomplete
+Plug 'ncm2/ncm2'          " Autocomplete
 Plug 'ncm2/ncm2-bufword'  " Autocomplete from words in buffer
-Plug 'ncm2/ncm2-path'  " Autocomplete path
-Plug 'roxma/nvim-yarp'  " Make vim scripts with python -> pip3 install neovim --user -> ncm2 dependency
+Plug 'ncm2/ncm2-path'     " Autocomplete path
+Plug 'roxma/nvim-yarp'    " Make vim scripts with python -> pip3 install neovim --user -> ncm2 dependency
 
 call plug#end()
 " =============
@@ -98,14 +100,15 @@ set background=dark
 " ===========================
 " => Editor Configurations <=
 " ===========================
-set hidden  " Allows edit other files without the need to save the current
-set number  " Shows line numbers on the left
-set relativenumber  " Shows line relative numbers on the left
-set inccommand=split  " Allows better search and replace visualization
 filetype plugin indent on  " Turns on 'detection', 'plugin' and 'indent'
-set tabstop=4  " Shows existing tab with 4 spaces width
-set shiftwidth=4  " When indenting with '>', use 4 spaces width
-set expandtab  " On pressing tab, insert 4 spaces
+set hidden                 " Allows edit other files without the need to save the current
+set number                 " Shows line numbers on the left
+set relativenumber         " Shows line relative numbers on the left
+set inccommand=split       " Allows better search and replace visualization
+set tabstop=4              " Shows existing tab with 4 spaces width
+set shiftwidth=4           " When indenting with '>', use 4 spaces width
+set expandtab              " On pressing tab, insert 4 spaces
+set cursorline             " Highlights current cursor line
 " ===========================
 
 " =====================
@@ -118,9 +121,9 @@ let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
 
 " Buffer switching
-"   change to last buffer
+"   change to last buffer [LEADER LEADER]
 nnoremap <leader><leader> <c-^>
-"   change to specific buffer
+"   change to specific buffer [LEADER <1-9>]
 "   TODO: Refactor
 nnoremap <leader>1 :b1<cr>
 nnoremap <leader>2 :b2<cr>
@@ -131,11 +134,11 @@ nnoremap <leader>6 :b6<cr>
 nnoremap <leader>7 :b7<cr>
 nnoremap <leader>8 :b8<cr>
 nnoremap <leader>9 :b9<cr>
-"   close buffer
+"   close buffer [LEADER ww]
 nnoremap <leader>ww :bw<cr>
-"   next buffer
+"   next buffer [LEADER l]
 nnoremap <leader>l :bn<cr>
-"   previous buffer
+"   previous buffer [LEADER h]
 nnoremap <leader>h :bp<cr>
 
 " Nvim config
@@ -147,7 +150,7 @@ nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 nnoremap <leader>iv :PlugInstall<cr>
 
 " NERDTree
-"   toggle nerdtree
+"   toggle nerdtree [LEADER b]
 nnoremap <leader>b :NERDTreeToggle<cr>
 " =====================
 
