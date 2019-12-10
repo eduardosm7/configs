@@ -1,4 +1,4 @@
-"v ===========================
+" ===========================
 " => External Dependencies <=
 " ===========================
 " Python's Neovim Lib
@@ -101,15 +101,16 @@ set background=dark
 " ===========================
 " => Editor Configurations <=
 " ===========================
-filetype plugin indent on  " Turns on 'detection', 'plugin' and 'indent'
-set hidden                 " Allows edit other files without the need to save the current
-set number                 " Shows line numbers on the left
-set relativenumber         " Shows line relative numbers on the left
-set inccommand=split       " Allows better search and replace visualization
-set tabstop=4              " Shows existing tab with 4 spaces width
-set shiftwidth=4           " When indenting with '>', use 4 spaces width
-set expandtab              " On pressing tab, insert 4 spaces
-set cursorline             " Highlights current cursor line
+filetype plugin indent on   " Turns on 'detection', 'plugin' and 'indent'
+set hidden                  " Allows edit other files without the need to save the current
+set number                  " Shows line numbers on the left
+set relativenumber          " Shows line relative numbers on the left
+set inccommand=split        " Allows better search and replace visualization
+set tabstop=4               " Shows existing tab with 4 spaces width
+set shiftwidth=4            " When indenting with '>', use 4 spaces width
+set expandtab               " On pressing tab, insert 4 spaces
+set cursorline              " Highlights current cursor line
+set clipboard+=unnamedplus  " Highlights current cursor line
 " ===========================
 
 " =====================
@@ -141,6 +142,9 @@ nnoremap <leader>ww :bw<cr>
 nnoremap <leader>l :bn<cr>
 "   previous buffer [LEADER h]
 nnoremap <leader>h :bp<cr>
+
+" Copy to clipboard
+vnoremap <leader>y "+y
 
 " Nvim config
 "   open nvim config file [LEARDER ev]
