@@ -17,6 +17,7 @@ function install_tmux {
     else
         log "Tmux is not installed, installing now..."
         sudo apt install --assume-yes tmux
+        log "Tmux was installed successfully"
     fi
 }
 
@@ -30,6 +31,7 @@ function install_dependencies {
     else
         log "Tmux Plugin Manager is not installed, installing now..."
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+        log "Tmux Plugin Manager was installed successfully"
     fi
 }
 
@@ -37,6 +39,10 @@ function create_symbolic_link {
     log "Creating .tmux.conf symbolic link..."
 
     TMUX_CONF_PATH=$HOME/.tmux.conf
+
+    if [ -f $TMUX_CONF_PATH ]; then
+        rm $TMUX_CONF_PATH
+    fi
 
     if [ ! -L $TMUX_CONF_PATH ]; then
         ln -s $DIR/.tmux.conf $TMUX_CONF_PATH
