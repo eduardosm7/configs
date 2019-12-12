@@ -1,1 +1,1 @@
-/home/eduardo/.local/share/omf/themes/eclm/fish_prompt.fish
+my_fish_prompt.fish
